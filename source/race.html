@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>F1 Data Visualization</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/d3.v7.min.js"></script>
+    <script src="js/race.js" defer></script>
+    <script>
+        if (performance.getEntriesByType("navigation")[0].type === "reload") {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body class="stats-body" onload="main()">
+    <header class="main-header">
+        <button onclick="window.location.href='overall.html'">Overall</button>
+        <button onclick="window.location.href='season.html'">Seasons</button>
+        <button onclick="window.location.href='race.html'">Races</button>
+    </header>
+
+    <main class="stats-content">
+        <div id="Selectors"></div>
+
+        <section id="podium">
+            <div class="podium-container">
+                <div class="podium-box" id="second-place">
+                    <div class="podium-content">P2</div>
+                </div>
+                <div class="podium-box" id="first-place">
+                    <div class="podium-content">P1</div>
+                </div>
+                <div class="podium-box" id="third-place">
+                    <div class="podium-content">P3</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fastest-lap">
+            <div id="fastest-lap-box">
+                <div id="fastest-lap-content">Fastest Lap</div>
+            </div>
+        </section>
+
+        <section id="race-overview">
+            <div class="grid-container">
+                <section id="grid-table">
+                    <h2>Starting Grid</h2>
+                    <table id="grid">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Driver</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+        
+                <section id="position-chart">
+                    <h2>Position Evolution</h2>
+                    <div id="chart-container">
+                    </div>
+                </section>
+        
+                <section id="finishing-grid">
+                    <h2>Finishing Grid</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Driver</th>
+                                <th>Interval</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </section>
+
+        <section id="lap-chart">
+        </section>
+
+        <section id="box-plot-chart">
+            <h2 style="margin-top: 70px; text-align: center; color: #ffff; opacity: 0">Lap Time Box Plot</h2>
+        </section>
+    </main>
+</body>
+</html>
